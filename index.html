@@ -23,9 +23,9 @@
     <main>
       <h2>Co wybierasz? </h2>
       <section class="chooseHand">
-        <i class="fas fa-hand-paper"></i>
-        <i class="fas fa-hand-rock"></i>
-        <i class="fas fa-hand-scissors"></i>
+        <i class="fas fa-hand-paper" data-option="papier"></i>
+        <i class="fas fa-hand-rock" data-option="kamień"></i>
+        <i class="fas fa-hand-scissors" data-option="nożyczki"></i>
       </section>
 
       <section class="play">
@@ -33,17 +33,17 @@
       </section>
 
       <section class="game">
-        <h3 id="playerChoose">Twoj wybór:</h3>
-        <h3 id="aiChoose">Wybór komputera:</h3>
+        <h3>Twoj wybór: <span id="playerChoose"></span></h3>
+        <h3>Wybór komputera: <span id="aiChoose"></span></h3>
         <h2 id="whoWin">Wygrasz czy przegrasz?</h2>
       </section>
       <section class="scores">
         <h2>statystyki</h2>
         <div class="statistic">
-          <h3>Liczba gier: <span>0</span></h3>
-          <h3>Wygranych:<span>0</span></h3>
-          <h3>Przegranych:<span>0</span></h3>
-          <h3>Remisów:<span>0</span></h3>
+          <h3>Liczba gier: <span id="game">0</span></h3>
+          <h3>Wygranych:<span id="winner">0</span></h3>
+          <h3>Przegranych:<span id="looser">0</span></h3>
+          <h3>Remisów:<span id="draw">0</span></h3>
         </div>
 
       </section>
@@ -59,6 +59,7 @@
       Minus, veritatis tempore!</p>
     <i class="fas fa-times"></i>
   </div>
+  <script src="rules.js"></script>
   <script src="main.js"></script>
 </body>
 

@@ -25,7 +25,7 @@ header {
 header h1{
   font-size: 1.3rem;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   text-transform: uppercase;
   background-color: blueviolet;
   color: white;
@@ -71,6 +71,7 @@ main h2{
 }
 .chooseHand i{
   transition: .3s linear;
+  cursor: pointer;
 }
 .chooseHand i:hover{
   color: blueviolet;
@@ -111,6 +112,11 @@ color: blueviolet;
 
 .game h3{
   padding: 10px;
+}
+
+.game h3 span {
+  text-transform: uppercase;
+  color: rgb(64, 133, 55);
 }
 
 .game h2{
@@ -158,7 +164,7 @@ footer p{
   transform: translate(-50%, -50%);
   width: 90vw;
   height: 50vh;
-  background-color: rgb(170, 168, 168);
+  background-color: rgb(187, 185, 185);
   z-index: 2;
   /* border-top: 10vh solid black; */
   /* border-bottom: 10vh solid black; */
@@ -166,10 +172,21 @@ footer p{
   transform: scale(0);
   transition: .3s;
   }
+  .rules h2{
+    padding: 10px;
+    background-color:  rgb(64, 133, 55);
+    color: white;
+    text-transform: uppercase;
+  }
+  .rules p{
+    margin-top: 10px;
+    padding: 10px;
+  }
   .rules i{
     font-size: 1.5rem;
     position: absolute;
     bottom: 0;
+
     right: 0;
     /* transform: translate(50%, -50%); */
     cursor: pointer;

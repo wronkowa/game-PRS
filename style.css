@@ -12,8 +12,11 @@ html {
   /* background-color: aquamarine; */
   min-height: 100vh;
   width: 100%;
+  transition: .3s;
 }
-
+.container.active{
+  filter: blur(5px);
+}
 header {
   text-align: right;
   background-color: white;
@@ -42,7 +45,7 @@ header button {
   transition: .3s linear;
 }
 
-button i{
+header button i{
   margin-right: 5px;
 }
 
@@ -50,6 +53,8 @@ header button:hover{
   background-color: black;
   color: white;
 }
+
+
 
 main h2{
   text-align: center;
@@ -93,8 +98,13 @@ color: blueviolet;
   box-shadow: 0 0 10px black;
   cursor: pointer;
   animation: pulse 2s linear infinite;
+  transition: .4s;
 }
 
+.play button:hover{
+ background-color: rgb(72, 201, 83);
+ color: black;
+}
 .game {
   margin: 15px 0;
 }
@@ -140,9 +150,37 @@ footer p{
   color: white;
   padding: 5px;
 }
+
+.rules {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 50vh;
+  background-color: rgb(170, 168, 168);
+  z-index: 2;
+  /* border-top: 10vh solid black; */
+  /* border-bottom: 10vh solid black; */
+  text-align: center;
+  transform: scale(0);
+  transition: .3s;
+  }
+  .rules i{
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* transform: translate(50%, -50%); */
+    cursor: pointer;
+  }
+  .rules.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
 @media (min-width: 768px){
   html {
-    font-size: 170%;
+    font-size: 130%;
   }
    
 }
@@ -158,6 +196,10 @@ footer p{
  .chooseHand {
    padding: 25px;
  }
+ .rules {
+  width: 60vw;
+  height: 70vh;
+}
 }
 
 

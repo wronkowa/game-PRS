@@ -163,7 +163,7 @@ footer p{
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
-  height: 50vh;
+  height: 90vh;
   background-color: rgb(187, 185, 185);
   z-index: 2;
   /* border-top: 10vh solid black; */
@@ -171,6 +171,8 @@ footer p{
   text-align: center;
   transform: scale(0);
   transition: .3s;
+  border: 2px solid rgba(0,20,0,0.7);
+  padding: 10px;
   }
   .rules h2{
     padding: 10px;
@@ -178,11 +180,29 @@ footer p{
     color: white;
     text-transform: uppercase;
   }
-  .rules p{
+  .rules>p{
     margin-top: 10px;
     padding: 10px;
+    text-align: left;
+    line-height: 150%;
   }
-  .rules i{
+
+  .rules ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 10px;
+    line-height: 150%;
+
+  }
+ 
+  .rules ul li i{
+    margin-right: 10px;
+  } 
+  .rules>span {
+    font-size: .7rem;
+    font-style: italic;
+  }
+  .rules span i{
     font-size: 1.5rem;
     position: absolute;
     bottom: 0;
@@ -215,10 +235,14 @@ footer p{
  }
  .rules {
   width: 60vw;
-  height: 70vh;
+  height: 90vh;
 }
 }
-
+@media (min-width: 1300px){
+  .rules {
+    height: 70vh;
+  }
+}
 
 
 @keyframes pulse {

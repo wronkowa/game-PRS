@@ -1,4 +1,4 @@
-const handsHtml = [...document.querySelectorAll('.chooseHand i')];
+const handsHtml = [...document.querySelectorAll('.hands-container i')];
 
 const statistic = {
   game: 0,
@@ -11,32 +11,32 @@ let aiChoose = '';
 
 const handChoose = (e) => {
   playerChoose = e.target.dataset.option;
-  console.log(playerChoose);
+  // console.log(playerChoose);
   handsHtml.forEach(hand => hand.classList.remove('active'));
   e.target.classList.add('active');
-  document.querySelector('.game #playerChoose').textContent = playerChoose;
+  document.querySelector('#player-pick').textContent = playerChoose;
 }
 
 const whoWin = () => {
   if (playerChoose === aiChoose) {
-    console.log('remis');
+    // console.log('remis');
     statistic.draw++;
-    document.querySelector('.statistic #draw').textContent = statistic.draw;
-    document.querySelector('.game #whoWin').textContent = 'REMIS';
+    document.querySelector('#draws').textContent = statistic.draw;
+    document.querySelector('.winner h1').textContent = 'REMIS';
   }
   else if ((playerChoose === 'papier' && aiChoose === 'kamień') || (playerChoose === 'kamień' && aiChoose === 'nożyczki') || (playerChoose === 'nożyczki' && aiChoose === 'papier')) {
-    console.log('wygrana');
+    // console.log('wygrana');
     statistic.winner++;
-    document.querySelector('.statistic #winner').textContent = statistic.winner;
-    document.querySelector('.game #whoWin').textContent = 'wygrałeś!';
+    document.querySelector('#wins').textContent = statistic.winner;
+    document.querySelector('.winner h1').textContent = 'wygrałeś!';
   }
   else
   //  if ((playerChoose === 'papier' && aiChoose === 'nożyczki') || (playerChoose === 'kamień' && aiChoose === 'papier'))
   {
-    console.log('przegrana');
+    // console.log('przegrana');
     statistic.looser++;
-    document.querySelector('.statistic #looser').textContent = statistic.looser;
-    document.querySelector('.game #whoWin').textContent = 'Przegrałeś :(';
+    document.querySelector('#looses').textContent = statistic.looser;
+    document.querySelector('.winner h1').textContent = 'Przegrałeś :(';
   }
 }
 
@@ -46,10 +46,10 @@ const startGame = () => {
   else {
     // console.log('gramy');
     aiChoose = handsHtml[Math.floor(Math.random() * 3)].dataset.option;
-    document.querySelector('.game #aiChoose').textContent = aiChoose;
+    document.querySelector('#ai-pick').textContent = aiChoose;
     statistic.game++;
     // console.log(statistic.game);
-    document.querySelector('.statistic #game').textContent = statistic.game;
+    document.querySelector('#games').textContent = statistic.game;
     whoWin();
   }
 

@@ -4,43 +4,41 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 87.5%;
+  font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-  /* background-color: aquamarine; */
-  /* min-height: 100vh; */
+  /* background-color: red; */
+  height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   transition: .3s;
 }
 .container.active{
   filter: blur(5px);
 }
-header {
-  text-align: right;
-  background-color: white;
+header{
+  padding: 35px 0 20px;
+  position: relative;
+  background-color: rgb(145, 211, 211);
+  border-bottom: 2px solid black;
 }
 
 header h1{
-  font-size: 1.3rem;
-  text-align: center;
-  padding: 20px;
   text-transform: uppercase;
-  background-color: blueviolet;
-  color: white;
+  margin-bottom: 10px;
+  font-size: 2rem;
 }
 
 header button {
-  /* width: 100%; */
-  text-align: right;
-  border: none;
-  padding: 0 5px;
-  /* margin: 10px; */
+  padding: 5px 10px;
+  border:none;
   background-color: white;
-  font-size: 1rem;
-  height: 30px;
-  line-height: 30px;
+  border-radius: 20px;
   cursor: pointer;
   transition: .3s linear;
 }
@@ -50,105 +48,107 @@ header button i{
 }
 
 header button:hover{
-  background-color: black;
-  color: white;
+  background-color: rgb(227, 238, 124);
+  /* color: white; */
 }
-
-
-
-main h2{
-  text-align: center;
-  margin: 15px;
-  padding: 5px;
-  font-size: 1.5rem;
-}
-
-.chooseHand {
+main{
+  flex-grow: 1;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  font-size: 5rem;
-  padding:5px;
 }
-.chooseHand i{
-  transition: .3s linear;
+.choose-hand{
+  /* background-color: blueviolet; */
+  padding: 10px 0;
+}
+.choose-hand h1{
+  font-size: 2rem;
+  font-weight: 300;
+}
+.hands-container{
+  /* background-color: cadetblue; */
+  padding: 10px 0;
+}
+
+.hands-container i{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(145, 211, 211);
+  line-height: 70px;
+  font-size: 4.5rem;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
   cursor: pointer;
+  transition: .3s linear;
 }
-.chooseHand i:hover{
-  color: blueviolet;
-  text-shadow: 0 0 30px black;
+.hands-container i:nth-child(3){
+  margin-right: 0;
 }
-
-.chooseHand i.active{
-text-shadow: 0 0 30px black;
-color: blueviolet;
+.hands-container i:hover{
+  background-color: rgb(227, 238, 124);
 }
 
-.play{
-  text-align: center;
-  margin: 15px;
-}
 .play button
 {
   text-transform: uppercase;
-  padding: 10px 0;
-  width: 40%;
-  background-color: rgb(64, 133, 55);
-  color: white;
+  padding: 10px 20px;
   border: 2px solid black;
+  border-radius: 30px;
+  background-color: rgb(227, 238, 124);
+  /* color: rgb(74, 136, 74); */
   font-size: 2rem;
-  box-shadow: 0 0 10px black;
   cursor: pointer;
-  animation: pulse 2s linear infinite;
   transition: .4s;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .play button:hover{
- background-color: rgb(72, 201, 83);
+  background-color: rgb(223, 181, 65);
  color: black;
 }
-.game {
-  margin: 15px 0;
-}
-
-.game h3{
-  padding: 10px;
-}
-
-.game h3 span {
-  text-transform: uppercase;
-  color: rgb(64, 133, 55);
-}
-
-.game h2{
-  text-transform: uppercase;
-  color: blueviolet;
-/* letter-spacing: 1px; */
-}
-.scores {
-  text-align: center;
-  background-color: rgb(163, 161, 161);
-  padding-bottom: 10px;
-}
-.scores h2{
-  text-transform: uppercase;
-  
-}
-.statistic {
-  width: 50%;
-  /* background-color: brown; */
+.choosed-option{
+  /* background-color: rgb(211, 156, 156); */
+  padding: 20px;
+  width: 70%;
   margin: 0 auto;
 }
-
-.statistic h3{
-  padding: 5px;
+.box {
   display: flex;
   justify-content: space-between;
+  /* margin: 15px 0; */
 }
-
+.box h1,
+.box span{
+  font-size: 1.8rem;
+  margin: 5px 0;
+}
+.box span {
+  background-color: rgb(245, 225, 169); 
+}
+.statistic {
+  /* background-color: red; */
+  padding: 20px;
+  width: 70%;
+  margin: 0 auto;
+}
+.statistic h1{
+  font-size: 2rem;
+}
+.statistic .box:nth-child(odd){
+  background-color: rgb(224, 224, 223);
+}
+.statistic .box h1{
+  font-size: 1.6rem;
+}
 footer {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   text-align: center;
-  background-color: blueviolet;
+  background-color: rgb(145, 211, 211);
+  border-top: 2px solid black;
+  /* background-color: blueviolet; */
   
 }
 
@@ -156,7 +156,11 @@ footer p{
   color: white;
   padding: 5px;
 }
-
+footer p a{
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
 .rules {
   position: absolute;
   top: 50%;
@@ -215,44 +219,4 @@ footer p{
     transform: translate(-50%, -50%) scale(1);
   }
 
-@media (min-width: 768px){
-  html {
-    font-size: 130%;
-  }
-   
-}
 
-@media (min-width: 1024px){
- main {
-   width: 80%;
-   margin: 0 auto;
- }
- .play {
-   margin: 40px;
- }
- .chooseHand {
-   padding: 25px;
- }
- .rules {
-  width: 60vw;
-  height: 90vh;
-}
-}
-@media (min-width: 1300px){
-  .rules {
-    height: 70vh;
-  }
-}
-
-
-@keyframes pulse {
-  0%{
-    transform: scale(1)
-  }
-  50%{
-    transform: scale(1.05)
-  }
-  100% {
-    transform: scale(1)
-  }
-}

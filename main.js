@@ -61,3 +61,10 @@ handsHtml.forEach(hand => hand.addEventListener("click", handChoose))
 
 // przycisk graj:
 document.querySelector('.play button').addEventListener('click', startGame);
+
+//add date to footer
+
+const date = new Date();
+const year = date.getFullYear();
+
+document.querySelector('.year').textContent = year;
